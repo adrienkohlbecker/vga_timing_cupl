@@ -1,0 +1,62 @@
+%SIGNAL
+PIN  14 =  DISPEND 
+PIN  17 =  DISPLAY 
+PIN   1 =  Q0 
+PIN   2 =  Q1 
+PIN   3 =  Q2 
+PIN   4 =  Q3 
+PIN   5 =  Q4 
+PIN   6 =  Q5 
+PIN   7 =  Q6 
+PIN   8 =  Q7 
+PIN   9 =  Q8 
+PIN  11 =  Q9 
+PIN  13 =  RESET 
+PIN  16 =  SYNCEND 
+PIN  15 =  SYNCSTRT 
+PIN  18 =  VSYNC 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+DISPEND =>
+    !Q0 & !Q1 & !Q2 & !Q3 & !Q4 & Q5 & Q6 & Q7 & Q8
+
+DISPLAY =>
+    RESET
+  # !DISPEND & DISPLAY
+
+RESET =>
+    Q0 & !Q1 & Q2 & Q3 & !Q4 & !Q5 & !Q6 & !Q7 & !Q8 & Q9
+
+SYNCEND =>
+    !Q0 & Q1 & Q2 & Q3 & !Q4 & Q5 & Q6 & Q7 & Q8
+
+SYNCSTRT =>
+    !Q0 & Q1 & !Q2 & Q3 & !Q4 & Q5 & Q6 & Q7 & Q8
+
+VSYNC =>
+    SYNCSTRT
+  # !DISPLAY & !SYNCEND & VSYNC
+
+DISPEND.oe  =>
+    1 
+
+DISPLAY.oe  =>
+    1 
+
+RESET.oe  =>
+    1 
+
+SYNCEND.oe  =>
+    1 
+
+SYNCSTRT.oe  =>
+    1 
+
+VSYNC.oe  =>
+    1 
+
+%END

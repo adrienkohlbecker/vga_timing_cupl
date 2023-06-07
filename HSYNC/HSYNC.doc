@@ -1,0 +1,199 @@
+
+*******************************************************************************
+                                     HSYNC
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# 60008009
+Device          g16v8ma  Library DLIB-h-40-8
+Created         Wed Jun 07 14:56:04 2023
+Name            HSYNC 
+Partno          00 
+Revision        01 
+Date            23/05/2021 
+Designer        Engineer 
+Company         - 
+Assembly        None 
+Location        
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+DISPEND =>
+    !Q0 & !Q1 & !Q2 & !Q3 & !Q4 & !Q5 & !Q6 & Q7 & !Q8 & Q9
+
+DISPLAY =>
+    RESET
+  # !DISPEND & DISPLAY
+
+HSYNC =>
+    SYNCSTRT
+  # !DISPLAY & HSYNC & !SYNCEND
+
+RESET =>
+    !Q0 & !Q1 & !Q2 & !Q3 & !Q4 & Q5 & !Q6 & !Q7 & Q8 & Q9
+
+SYNCEND =>
+    !Q0 & !Q1 & !Q2 & !Q3 & Q4 & Q5 & Q6 & Q7 & !Q8 & Q9
+
+SYNCSTRT =>
+    !Q0 & !Q1 & !Q2 & !Q3 & Q4 & !Q5 & !Q6 & Q7 & !Q8 & Q9
+
+DISPEND.oe  =>
+    1 
+
+DISPLAY.oe  =>
+    1 
+
+HSYNC.oe  =>
+    1 
+
+RESET.oe  =>
+    1 
+
+SYNCEND.oe  =>
+    1 
+
+SYNCSTRT.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    DISPEND                     14       V        1       7       1     
+    DISPLAY                     17       V        2       7       1     
+    HSYNC                       18       V        2       7       1     
+    Q0                          1        V        -       -       -     
+    Q1                          2        V        -       -       -     
+    Q2                          3        V        -       -       -     
+    Q3                          4        V        -       -       -     
+    Q4                          5        V        -       -       -     
+    Q5                          6        V        -       -       -     
+    Q6                          7        V        -       -       -     
+    Q7                          8        V        -       -       -     
+    Q8                          9        V        -       -       -     
+    Q9                          11       V        -       -       -     
+    RESET                       13       V        1       7       1     
+    SYNCEND                     16       V        1       7       1     
+    SYNCSTRT                    15       V        1       7       1     
+    DISPEND             oe      14       D        1       1       0     
+    DISPLAY             oe      17       D        1       1       0     
+    HSYNC               oe      18       D        1       1       0     
+    RESET               oe      13       D        1       1       0     
+    SYNCEND             oe      16       D        1       1       0     
+    SYNCSTRT            oe      15       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+
+
+===============================================================================
+                                   Fuse Plot
+===============================================================================
+
+Syn   02192 - Ac0   02193 - 
+
+Pin #19  02048  Pol x  02120  Ac1 - 
+ 00000 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00032 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00064 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00096 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00128 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00192 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00224 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #18  02049  Pol -  02121  Ac1 - 
+ 00256 -------------------------------- 
+ 00288 ------------------x------------- 
+ 00320 ------x----x---x---------------- 
+ 00352 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00384 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00416 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00448 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #17  02050  Pol -  02122  Ac1 - 
+ 00512 -------------------------------- 
+ 00544 --------------------------x----- 
+ 00576 ----------x------------x-------- 
+ 00608 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00640 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00672 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00704 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00736 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #16  02051  Pol -  02123  Ac1 - 
+ 00768 -------------------------------- 
+ 00800 -x-x-x---x--x---x---x---x----xx- 
+ 00832 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00864 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00896 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00928 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00960 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00992 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #15  02052  Pol -  02124  Ac1 - 
+ 01024 -------------------------------- 
+ 01056 -x-x-x---x--x----x---x--x----xx- 
+ 01088 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01120 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01152 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01184 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01216 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01248 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #14  02053  Pol -  02125  Ac1 - 
+ 01280 -------------------------------- 
+ 01312 -x-x-x---x---x---x---x--x----xx- 
+ 01344 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01376 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01408 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01440 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01472 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01504 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #13  02054  Pol -  02126  Ac1 - 
+ 01536 -------------------------------- 
+ 01568 -x-x-x---x---x--x----x---x--x-x- 
+ 01600 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01632 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01664 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01696 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01728 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01760 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #12  02055  Pol x  02127  Ac1 - 
+ 01792 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01824 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01856 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01888 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01920 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01952 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01984 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02016 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+
+
+LEGEND    X : fuse not blown 
+          - : fuse blown 
+
+===============================================================================
+                                 Chip Diagram
+===============================================================================
+
+                               ______________
+                              |    HSYNC     |
+                       Q0 x---|1           20|---x Vcc                      
+                       Q1 x---|2           19|---x                          
+                       Q2 x---|3           18|---x HSYNC                    
+                       Q3 x---|4           17|---x DISPLAY                  
+                       Q4 x---|5           16|---x SYNCEND                  
+                       Q5 x---|6           15|---x SYNCSTRT                 
+                       Q6 x---|7           14|---x DISPEND                  
+                       Q7 x---|8           13|---x RESET                    
+                       Q8 x---|9           12|---x                          
+                      GND x---|10          11|---x Q9                       
+                              |______________|
+

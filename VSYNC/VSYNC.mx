@@ -1,0 +1,49 @@
+Name     VSYNC ;
+PartNo   00 ;
+Date     23/05/2021 ;
+Revision 01 ;
+Designer Engineer ;
+Company  - ;
+Assembly None ;
+Location  ;
+Device   G16V8A ;
+
+/* *************** INPUT PINS *********************/
+Pin 1     = Q0;
+Pin 2     = Q1;
+Pin 3     = Q2;
+Pin 4     = Q3;
+Pin 5     = Q4;
+Pin 6     = Q5;
+Pin 7     = Q6;
+Pin 8     = Q7;
+Pin 9     = Q8;
+Pin 11    = Q9;
+
+/* *************** OUTPUT PINS *********************/
+
+Pin 13     = RESET;
+Pin 14     = DISPEND; /* No Connect, only used for feedback to reduce product terms */
+Pin 15     = SYNCSTRT; /* No Connect, only used for feedback to reduce product terms */
+Pin 16     = SYNCEND; /* No Connect, only used for feedback to reduce product terms */
+Pin 17     = DISPLAY;
+Pin 18     = VSYNC;
+
+
+
+/* *************** EQUATIONS *********************/
+
+/* Count up to 480 = 111100000 */
+DISPEND = !Q0 & !Q1 & !Q2 & !Q3 & !Q4 & Q5 & Q6 & Q7 & Q8;
+
+/* Count up to 490 = 111101010 */
+SYNCSTRT = !Q0 & Q1 & !Q2 & Q3 & !Q4 & Q5 & Q6 & Q7 & Q8;
+
+/* Count up to 492 = 111101110 */
+SYNCEND = !Q0 & Q1 & Q2 & Q3 & !Q4 & Q5 & Q6 & Q7 & Q8;
+
+/* Count up to 525 = 1000001101 */
+RESET = Q0 & !Q1 & Q2 & Q3 & !Q4 & !Q5 & !Q6 & !Q7 & !Q8 & Q9;
+
+DISPLAY = RESET # (DISPLAY & !DISPEND);
+VSYNC = SYNCSTRT # (VSYNC & !SYNCEND & !DISPLAY); /* adding !DISPLAY so the power on state is valid */
